@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='css/my_style_home.css') }}">
+    <title>Cyberooms</title>
+</head>
+
+<body>
+    <div class="row1_container">
+        <div class="row1">
+            <a href="/dashboard">
+                <img src="../static/img/title.jpg" alt="cyberooms">
+            </a>
+            <div class="nav_fun">
+                <a href="/my_cyberoom/{{user.id}}">My Room</a>
+                <a href="/explore">Explore</a>
+                {% with messages = get_flashed_messages(category_filter=['searching_error']) %}
+                <div class="error">
+                    {% if messages %}
+                    {% for message in messages %}
+                    <p style="color: red;">{{message}}</p>
+                    {% endfor %}
+                    {% endif %}
+                    {% endwith %}  
+                </div>
+                <form action="/redirecting_friend" method="post">
+                    <input type="text" name="user_name" placeholder="Search Room">
+                    <button>Search</button>
+                </form>
+            
+            </div>
+            <a href="/">logout</a>
+        </div>
+    </div>
+    <div class="container">
+        <div class="main_container">
+            <div class="main_col1">
+                <form action="/posting" method="post">
+                    <textarea class="post_box" name="contents"  cols="30" rows="5" placeholder="What's on your mind, {{user.name}}?"></textarea><br>
+                    <div class="post_nft">
+                        <select name="nft_id">
+                            <option value=0>Add NFT in your post?</option>
+                            {% for nft in  user_with_nft.nfts %}
+                            <option value="{{nft.id}}"> {{nft.name}} </option>
+                            {% endfor %}
+                        </select>
+                        <button>Post</button>
+                    </div>
+                </form>
+                <br>
+                {% for post in user_with_post.posts %}
+                    {%if post.poster_name %}
+                        <div class="one_post">
+                            <h1>{{post.poster_name}}</h1> 
+                            <p class="contents">{{post.contents}}</p>
+                            <img src={{post.image}} alt="">
+                            <p class="time_span">{{post.time_span()}}</p>
+                        </div>
+                    {%endif%}
+                {% endfor %}
+            </div>
+            <div class="main_col2">
+                <h2>Friends:</h2>
+                
+                {% for friend in user.friends %}
+                    {% if friend.id%}
+                    <div class="friend_box">
+                        <img src="../static/img/user/user{{friend.id}}.png" alt="icon" class="friend_icon">
+                        <a class='friend' href="/friend_cyberoom/{{friend.id}}">{{friend.name}}</a><br>
+                    </div>
+                    {% endif %}
+                {% endfor %}
+    
+            </div>
+        </div>
+    </div>
+    
+    
+
+
+</body>
+
+</html>

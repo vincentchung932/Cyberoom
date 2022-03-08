@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='css/my_style_one_user.css') }}">
+    <title>Cyberooms</title>
+</head>
+
+<body>
+    <div class="row1_container">
+        <div class="row1">
+            <a href="/dashboard">
+                <img src="../static/img/title.jpg" alt="cyberooms">
+            </a>
+            <div class="nav_fun">
+                {% with messages = get_flashed_messages(category_filter=['searching_error']) %}
+                <div class="error">
+                    {% if messages %}
+                    {% for message in messages %}
+                    <p style="color: red;">{{message}}</p>
+                    {% endfor %}
+                    {% endif %}
+                    {% endwith %}  
+                </div>
+                <form action="/redirecting_friend" method="post">
+                    <input id="search_bar" type="text" name="user_name" placeholder="Search Room">
+                    <button>Search</button>
+                </form>
+
+                <a href="/">logout</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="row2_container">
+        <div class="row2">
+            <div> 
+                <p>{{user_with_nft.name}}'s Cyberoom!</p>              
+                <a href="/my_cyberoom/{{user_with_nft.id}}">Collections</a>
+                <a href="/favorite/<int:id>">Favorited</a>
+            </div>
+            <div>
+                {% if check %}
+                <form method="get" action="/dis_friend/{{user_with_nft.id}}">
+                    <button type="submit" class="hovertext" data-hover="Unfriend?">√ friend</button>
+                    <!-- <span class="tooltiptext">Unfriend?</span> -->
+                </form>
+                {% else %}
+                <form method="get" action="/add_friend/{{user_with_nft.id}}">
+                    <button type="submit">+ Add friend</button>
+                </form>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+    <div class="row3">
+        <img id="my_icon" src="../static/img/user/user{{user_with_nft.id}}.png" alt="">
+    </div>
+
+    <div class="container">
+        <div class="inner_container">
+            {% for nft in user_with_nft.nfts %}
+            <div class="nft">
+                <img src={{nft.image}} alt={{nft.name}}>
+                <p>{{nft.name}}</p> 
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+    
+    
+
+
+</body>
+
+</html>

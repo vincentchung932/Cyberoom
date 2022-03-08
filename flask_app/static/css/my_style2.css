@@ -1,0 +1,17 @@
+*{
+    margin: 5px;
+}
+
+.error{
+    background-color: rgb(247, 138, 156);
+    color: red;
+    width: 100%;
+}
+
+.row1{
+    display: flex;
+    justify-content: space-around;
+}
+.row2{
+    text-align: right;
+}

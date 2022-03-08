@@ -1,0 +1,33 @@
+*{
+    margin: 5px;
+}
+
+.row1{
+    display: flex;
+    justify-content: space-around;
+}
+
+.recipe_table{
+    border: 1px solid;
+}
+
+.recipe_table th{
+    width: 300px;
+}
+
+.container_bottom{
+    display: flex;
+    justify-content: space-around;
+}
+
+.row2{
+    text-align: right;
+}
+
+.reports{
+    margin: 10px;
+    padding: 10px;
+    border-bottom: solid gray 1px;
+    display: flex;
+    justify-content: space-between;
+}

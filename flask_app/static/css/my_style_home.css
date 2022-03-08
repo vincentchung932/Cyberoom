@@ -1,0 +1,145 @@
+*{
+    margin: 0px;
+    font-size: small;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.container{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    background-color: #1A1A40;
+    padding-top: 10px;
+    /* height: 8000px; */
+}
+
+.row1_container {
+    display: flex;
+    height: 60px;
+    width: 100%;
+    background-color:#EEEEEE ;
+    justify-content: center;
+    
+}
+
+.row1{
+    display: flex;
+    width: 950px;
+    justify-content: space-between;
+    align-items: center;
+}
+.row1 img{
+    height: 50px;
+}
+
+.nav_fun{
+    display: flex;
+    justify-content: space-between;
+    width: 500px;
+    align-items: center;
+}
+
+a{
+    text-decoration: none;
+    color: rgb(0, 119, 167);
+}
+
+a:hover {
+    font-weight: bolder;
+    color: rgb(0, 20, 201);
+}
+
+.main_container{
+    display: flex;
+    width: 950px;
+    /* background-color: aquamarine; */
+    /* height: 1000px; */
+    justify-content: space-between;
+}
+
+.main_col1{
+    width: 630px;
+    /* height: 500px; */
+    /* background-color: blueviolet; */
+}
+
+.main_col2{
+    width: 200px;
+    /* height: 500px; */
+    /* background-color: cornflowerblue; */
+}
+
+h2{
+    font-size: 20px;
+    color:#EEEEEE ;
+    margin-bottom: 3px;
+}
+
+.post_box{
+    resize: none;
+    width: 624px;
+    border-radius: 3px;    
+}
+
+.post_nft{
+    text-align: right;
+}
+
+.one_post img{
+    display:block; 
+    margin:5px auto;
+    width: 500px;
+    
+}
+
+.one_post{
+    border: 2px solid black;
+    padding: 10px;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    background-color: #27275c;
+}
+
+.one_post h1{
+    color: #EEEEEE;
+    font-size: 20px;
+    margin-bottom: 3px;
+    margin-left: 52px;
+}
+
+.contents{
+    color: #EEEEEE;
+    margin-left: 52px;
+}
+
+.time_span{
+    color: rgb(117, 117, 117);
+    margin-left: 52px;
+}
+
+.friend{
+    padding-top: 3px;
+    text-decoration: none;
+    color: #EEEEEE;
+    line-height: 30px;
+}
+
+.friend:hover {
+    font-weight: bolder;
+    color: white;
+}
+
+.friend_icon{
+    height: 30px;
+    width: 30px;
+    border-radius: 100%;
+    border: #EEEEEE solid 2px;
+    margin-right: 10px;
+    margin-bottom: 2px;
+}
+
+.friend_box{
+    margin-top: 20px;
+    vertical-align: middle;
+    display: flex;
+}

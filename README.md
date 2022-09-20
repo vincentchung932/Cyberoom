@@ -2,7 +2,7 @@
 
 ## About
 
-**Cyberoom** is a NFTs sharing social networking service. The web app allows users to link their digital wallet and share their own NFTs collections with their friends or publicly. Users can also follows other users or their NFTs.
+**Cyberoom** is a NFTs sharing social networking service. The web app allows users to link their digital wallet and share their own NFTs collections with their friends or publicly. Users can also follows other users or their NFTs. The project is built in Flask.
 
 ![login_page](./screen_shot/login_screenshot.JPG)
 
